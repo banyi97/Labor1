@@ -48,7 +48,7 @@ always @(posedge clk)
 	case (cntr)
 		0: dmux <= din0;
 		1: dmux <= din1;
-		default: dmux <= 'bx;
+		default: dmux <= 15;
 	endcase
 	
 //segment decoder
@@ -73,18 +73,16 @@ assign SEG = SEG_DEC;
 endmodule
 
 /* init
-
 wire [7:0] cntrl_7segSEG;
 wire [3:0] cntrl_7segAN;
 cntrl_7seg seg7count(
 	.clk(clk),
 	.rst(rst),
 	.din0(cntr_d0),
-	.din1({0, cntrl_d1}),
+	.din1({0, cntr_d1}),
 	.AN(cntrl_7segAN),
 	.SEG(cntrl_7segSEG)
 );
 assign AN = cntrl_7segAN;
 assign SEG = cntrl_7segSEG;
-
 */
