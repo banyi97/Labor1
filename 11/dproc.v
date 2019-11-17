@@ -45,7 +45,7 @@ assign d2 = data_out[7:4];
 
 //Converting 2-complement temperature value -------------------------------------------------
 always @(posedge clk)
-	data_in <= ~data_in;
+	data_in <= ~data_in + 1;
 
 //Offset - read from sw[6:0]
 wire [12:0] temp_off;
