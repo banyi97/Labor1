@@ -38,7 +38,7 @@ assign parity1 = ~(^bcd1_in);
 assign parity0 = ~(^bcd0_in);
 assign parityCr = ~(^cr);
 
-reg out = 1;
+reg out = 1; // idle state
 always @ (posedge clk)
 	if(rst)
 		shr <= ~0; // 1essel telitoltes
